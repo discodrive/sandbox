@@ -1,0 +1,81 @@
+{
+    "name": "Substrakt/Baseproject",
+    "description": "Baseproject brings Composer based programming to WordPress.",
+    "keywords": ["Library", "WordPress", "OOP", "Composer"],
+    "homepage": "http://github.com/substrakt/baseproject",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Stuart Maynes",
+            "email": "stu@substrak.com",
+            "homepage": "https://substrakt.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type":"composer",
+            "url":"https://composer.deliciousbrains.com/97A4870DAD37D088FB7C88525BC7FC17"
+        },
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "advanced-custom-fields/advanced-custom-fields-pro",
+                "version": "5.7.6",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
+                },
+                "require": {
+                    "philippbaschke/acf-pro-installer": "^1.0",
+                    "composer/installers": "^1.0"
+                }
+            }
+        },
+        {
+            "type": "composer",
+            "url": "https://composer.substrakt.com"
+        }
+    ],
+    "extra": {
+        "wordpress-install-dir": "public/admin",
+        "installer-paths": {
+            "public/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/themes/{$name}/": ["type:wordpress-theme"]
+        }
+    },
+    "require": {
+        "php": "^7.2",
+        "johnpbloch/wordpress-core-installer": "^1.0",
+        "composer/installers": "^1.2",
+        "johnpbloch/wordpress": "^4.9",
+        "philippbaschke/acf-pro-installer": "^1.0",
+        "advanced-custom-fields/advanced-custom-fields-pro": "^5.0",
+        "wpackagist-plugin/redis-cache": "^1.3",
+        "predis/predis": "1.0.3",
+        "ext-calendar": "*",
+        "ext-mbstring": "*",
+        "ext-gd": "*",
+        "wpackagist-plugin/query-monitor": "^3.0",
+        "wpackagist-plugin/sendgrid-email-delivery-simplified": "^1.11",
+        "wpackagist-plugin/redirection": "^3.1",
+        "wpackagist-plugin/acf-image-crop-add-on": "^1.4",
+        "deliciousbrains-plugin/wp-offload-media": "^2.0",
+        "substrakt/construkt": "^1.1",
+        "icanboogie/inflector": "^1.4",
+        "tracy/tracy": "^2.4",
+        "substrakt/basetheme": "^2.4",
+        "substrakt/attendable": "^4.1",
+        "substrakt/platypus": "^2.0",
+        "roots/wp-password-bcrypt": "^1.0",
+        "substrakt/onsale": "^2.0"
+    },
+    "require-dev": {
+        "vlucas/phpdotenv": "^2.4",
+        "phpunit/phpunit": "^5.7"
+    }
+}

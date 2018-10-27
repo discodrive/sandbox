@@ -1,0 +1,32 @@
+###                                         
+# Config to route all requests to /public directory
+# when working locally through MAMP
+###
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^localhost(:[0-9]+)?$
+
+# Route all traffic to the subdir
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ ./public/$1
+RewriteRule ^(/)?$ ./public/index.php [L]
+
+# Correctly identify and serve folders
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ $1/ [L]
+
+# Wordpress rewrites
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+
+php_value upload_max_filesize 64M
+php_value post_max_size 64M
+php_value max_execution_time 300
+php_value max_input_time 300
+</IfModule>

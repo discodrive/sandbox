@@ -1,0 +1,1 @@
+/Users/leeaplin/Sites/sandbox/public/plugins/query-monitor/wp-content/db.php

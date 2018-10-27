@@ -1,0 +1,35 @@
+# Composer will install WordPress here
+/public/admin
+
+# Plugins will be installed via Composer
+/public/plugins/*
+!/public/plugins/.keep
+
+# Keep the uploads folder but not its contents
+/public/uploads/*
+!/public/uploads/.keep
+
+# Basetheme will be installed via composer but
+# other themes will need to be kept in the repo
+/public/themes/basetheme
+
+# Assets will be built by heroku and not kept
+# in source control
+/public/themes/childtheme/assets
+
+/upgrade
+/cache
+/vendor
+/node_modules
+/coverage
+.css.map
+.data
+.DS_Store
+.env
+.log
+.sass-cache
+.vagrant
+.vscode
+config.codekit
+config.codekit3
+yarn-error.log
